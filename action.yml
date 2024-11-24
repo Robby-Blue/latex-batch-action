@@ -1,0 +1,11 @@
+name: "LaTex Batch Compiler"
+description: "Finds all .tex files, tries to compile them and zips them together"
+inputs:
+  root_folder:
+    description: "Path of the root folder"
+    default: "/github/workspace"
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.root_folder }}
